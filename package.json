@@ -1,0 +1,28 @@
+{
+  "name": "dahuasdk",
+  "version": "0.0.1",
+  "description": "Dahua Cordova Plugin",
+  "cordova": {
+    "id": "com-dahua-plugins-sdk",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  
+  "keywords": [
+    "cordova",
+    "demo",
+    "dahua",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-browser"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

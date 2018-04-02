@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-dahua-sdk" version="0.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>DahuaSDK</name>
+    <description>Dahua SDK Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,demo,dahua</keywords>
+    <js-module name="DahuaSDK" src="www/DahuaSDK.js">
+        <clobbers target="modusecho" />
+    </js-module>
+    <hook type="after_plugin_add" src="hooks/after_plugin_add.js" />
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DahuaSDK">
+                <param name="browser-package" value="DahuaSDK" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/DahuaSDKProxy.js" name="DahuaSDKProxy">
+            <runs />
+        </js-module>
+    </platform>
+	<platform name="android">
+		<config-file target="config.xml" parent="/*">
+			<feature name="DahuaSDK">
+				<param name="android-package" value="com.moduscreate.plugin.DahuaSDK" />
+			</feature>
+		</config-file>
+        <source-file src="src/android/com/moduscreate/plugin/DahuaSDK.java" target-dir="src/com/moduscreate/plugin" />
+	</platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DahuaSDK">
+                <param name="ios-package" value="DahuaSDK" />
+            </feature>
+        </config-file>
+        <preference name="MICROPHONE_USAGE_DESCRIPTION" default="This app needs microphone access"/>
+            <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
+                <string>$MICROPHONE_USAGE_DESCRIPTION</string>
+            </config-file>
+        
+        <header-file src="src/ios/DahuaSDK.h" />
+        <source-file src="src/ios/DahuaSDK.m" />
+        
+        <header-file src="src/ios/global/Global.h" target-dir="global" />
+        <source-file src="src/ios/global/Global.mm" target-dir="global" />
+
+
+        <header-file src="src/ios/include/Defs.h" target-dir="include" />                   
+        <header-file src="src/ios/include/avglobal.h" target-dir="include" />               
+        <header-file src="src/ios/include/netsdk.h" target-dir="include" />                 
+        <header-file src="src/ios/include/playEx.h" target-dir="include" /> 
+        <header-file src="src/ios/include/ProxyClientCWrap.h" target-dir="include" />       
+        <header-file src="src/ios/include/configsdk.h" target-dir="include" />              
+        <header-file src="src/ios/include/play.h" target-dir="include" />                   
+        <header-file src="src/ios/include/searchIPCWifi.h" target-dir="include" /> 
+        
+        <header-file src="src/ios/Macros/Macro.h" target-dir="Macros" />
+        <header-file src="src/ios/Macros/VideoWnd.h" target-dir="Macros" />
+        <header-file src="src/ios/Macros/global_macro_define.h" target-dir="Macros" />
+        <header-file src="src/ios/Macros/SynthesizeSingleton.h" target-dir="Macros" />
+        <header-file src="src/ios/Macros/global_functions.h" target-dir="Macros" />
+        <source-file src="src/ios/Macros/global_functions.cpp" target-dir="Macros" />
+        <source-file src="src/ios/Macros/VideoWnd.m" target-dir="Macros" />
+                 
+        <source-file src="src/ios/lib/libInfra.a" target-dir="lib" framework="true" />          
+                  
+        <source-file src="src/ios/lib/libh26ldec.a" target-dir="lib" framework="true" />            
+        <source-file src="src/ios/lib/libnetsdk.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libStreamPackage.a" target-dir="lib" framework="true" />      
+        <source-file src="src/ios/lib/libdvr.a" target-dir="lib" framework="true" />                
+        <source-file src="src/ios/lib/libhevcdec.a" target-dir="lib" framework="true" />            
+        <source-file src="src/ios/lib/liboggdec.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libStreamParser.a" target-dir="lib" framework="true" />       
+        <source-file src="src/ios/lib/libfisheye.a" target-dir="lib" framework="true" />            
+        <source-file src="src/ios/lib/libhevcparser.a" target-dir="lib" framework="true" />         
+        <source-file src="src/ios/lib/libopus.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libToUProxy.a" target-dir="lib" framework="true" />           
+        <source-file src="src/ios/lib/libg711.a" target-dir="lib" framework="true" />               
+        <source-file src="src/ios/lib/libiosrender.a" target-dir="lib" framework="true" />          
+        <source-file src="src/ios/lib/libplay.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libaacdec.a" target-dir="lib" framework="true" />             
+        <source-file src="src/ios/lib/libg723dec.a" target-dir="lib" framework="true" />           
+        <source-file src="src/ios/lib/libmjpegdec.a" target-dir="lib" framework="true" />           
+        <source-file src="src/ios/lib/libpostprocess.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libadpcmdec.a" target-dir="lib" framework="true" />          
+        <source-file src="src/ios/lib/libg726dec.a" target-dir="lib" framework="true" />            
+        <source-file src="src/ios/lib/libmp2dec.a" target-dir="lib" framework="true" />             
+        <source-file src="src/ios/lib/libsearchIPCWifi.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libamrdec.a" target-dir="lib" framework="true" />             
+        <source-file src="src/ios/lib/libh264dec.a" target-dir="lib" framework="true" />            
+        <source-file src="src/ios/lib/libmp3dec.a" target-dir="lib" framework="true" />             
+        <source-file src="src/ios/lib/libsvacdec.a" target-dir="lib" framework="true" />
+        <source-file src="src/ios/lib/libconfigsdk.a" target-dir="lib" framework="true" />          
+        <source-file src="src/ios/lib/libh264parser.a" target-dir="lib" framework="true" />         
+        <source-file src="src/ios/lib/libmpeg4dec.a" target-dir="lib" framework="true" />        
+        
+        <framework src="VideoToolbox.framework" />
+        
+    </platform>
+</plugin>
