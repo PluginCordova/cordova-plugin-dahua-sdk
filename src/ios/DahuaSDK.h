@@ -4,6 +4,6 @@
 
 @interface DahuaSDK : CDVPlugin
 
-- (void)echo:(CDVInvokedUrlCommand*)command;
-
+- (void)login:(CDVInvokedUrlCommand*)command;
+- (void)talk:(CDVInvokedUrlCommand*)command;
 @end
