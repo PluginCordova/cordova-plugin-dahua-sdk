@@ -5,7 +5,7 @@
     <license>MIT</license>
     <keywords>cordova,demo,dahua</keywords>
     <js-module name="DahuaSDK" src="www/DahuaSDK.js">
-        <clobbers target="modusecho" />
+        <clobbers target="dahuasdk" />
     </js-module>
     <hook type="after_plugin_add" src="hooks/after_plugin_add.js" />
     <platform name="browser">
@@ -39,11 +39,11 @@
             </config-file>
         
         <header-file src="src/ios/DahuaSDK.h" />
-        <source-file src="src/ios/DahuaSDK.m" />
+        <source-file src="src/ios/DahuaSDK.mm" />
+        <source-file src="src/ios/AppDelegate.mm" />
         
         <header-file src="src/ios/global/Global.h" target-dir="global" />
         <source-file src="src/ios/global/Global.mm" target-dir="global" />
-
 
         <header-file src="src/ios/include/Defs.h" target-dir="include" />                   
         <header-file src="src/ios/include/avglobal.h" target-dir="include" />               
@@ -63,7 +63,7 @@
         <source-file src="src/ios/Macros/VideoWnd.m" target-dir="Macros" />
                  
         <source-file src="src/ios/lib/libInfra.a" target-dir="lib" framework="true" />          
-                  
+        <source-file src="src/ios/lib/libcryptopp.a" target-dir="lib" framework="true" />        
         <source-file src="src/ios/lib/libh26ldec.a" target-dir="lib" framework="true" />            
         <source-file src="src/ios/lib/libnetsdk.a" target-dir="lib" framework="true" />
         <source-file src="src/ios/lib/libStreamPackage.a" target-dir="lib" framework="true" />      
